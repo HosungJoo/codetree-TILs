@@ -97,7 +97,7 @@ int main()
 				//이긴 player 정보
 				int wstat, wgun, wtot, wnum, wdir;
 				if (ptot > map[nx][ny].player.tot) { //움직인 player가 이김
-					score[i] = ptot - map[nx][ny].player.tot; 
+					score[i] += ptot - map[nx][ny].player.tot; 
 					//진 사람 정보
 					lx = nx; ly = ny; ldir = map[nx][ny].player.dir;
 					lstat = map[nx][ny].player.stat; lgun = map[nx][ny].player.gun;
@@ -106,7 +106,7 @@ int main()
 					wstat = pstat; wgun = pgun; wtot = ptot; wnum = i; wdir = pdir;
 				}
 				else if(ptot < map[nx][ny].player.tot){ //상대player 이김
-					score[map[nx][ny].number] = map[nx][ny].player.tot - ptot;
+					score[map[nx][ny].number] += map[nx][ny].player.tot - ptot;
 					//진 사람 정보
 					lx = nx; ly = ny; ldir = pdir; lstat = pstat; lgun = pgun;
 					ltot = ptot; lnum = i;
@@ -117,7 +117,7 @@ int main()
 				}
 				else { //비김
 					if (pstat > map[nx][ny].player.stat) { //초기 능력치가 움직인 player가 높음
-						score[i] = ptot - map[nx][ny].player.tot;
+						score[i] += ptot - map[nx][ny].player.tot;
 						//진 사람 정보
 						lx = nx; ly = ny; ldir = map[nx][ny].player.dir;
 						lstat = map[nx][ny].player.stat; lgun = map[nx][ny].player.gun;
@@ -126,7 +126,7 @@ int main()
 						wstat = pstat; wgun = pgun; wtot = ptot; wnum = i; wdir = pdir;
 					}
 					else { //상대 player가 초기 능력치가 높음
-						score[map[nx][ny].number] = map[nx][ny].player.tot - ptot;
+						score[map[nx][ny].number] += map[nx][ny].player.tot - ptot;
 						//진 사람 정보
 						lx = nx; ly = ny; ldir = pdir; lstat = pstat; lgun = pgun;
 						ltot = ptot; lnum = i;
