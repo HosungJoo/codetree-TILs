@@ -48,7 +48,7 @@ int goRobot(int x, int y) {
 				q.push({ nx,ny });
 			}
 			else {
-				if (map[now.x][now.y] == map[nx][ny] || !(map[now.x][now.y] + map[nx][ny])) {
+				if (map[now.x][now.y] == map[nx][ny] || (map[now.x][now.y] + map[nx][ny])==0) {
 					q.push({ nx,ny });
 				}
 			}
