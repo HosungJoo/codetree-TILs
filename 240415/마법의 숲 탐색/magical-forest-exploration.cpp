@@ -33,6 +33,7 @@ int goRobot(int x, int y) {
 	while (!q.empty()) {
 		rinfo now = q.front();
 		q.pop();
+		visited[now.x][now.y] = 1;
 
 		max_r = max(max_r, now.x);
 
@@ -45,12 +46,10 @@ int goRobot(int x, int y) {
 			if (visited[nx][ny]) continue;
 			if (map[now.x][now.y] <= -1) {
 				q.push({ nx,ny });
-				visited[nx][ny] = 1;
 			}
 			else {
 				if (map[now.x][now.y] == map[nx][ny] || !(map[now.x][now.y] + map[nx][ny])) {
 					q.push({ nx,ny });
-					visited[nx][ny] = 1;
 				}
 			}
 		}
@@ -139,7 +138,7 @@ int main() {
 					int nsx = nx + dx[dir];
 					int nsy = ny + dy[dir];
 
-					if (nsy < 0 || nsx>=R) {
+					if (nsy < 0 || nsx >= R) {
 						stage3 = 1;
 						break;
 					}
@@ -190,7 +189,7 @@ int main() {
 					int nsx = nx + dx[dir];
 					int nsy = ny + dy[dir];
 
-					if (nsy >= C || nsx>=R) {
+					if (nsy >= C || nsx >= R) {
 						sstop = 1;
 						break;
 					}
@@ -245,7 +244,7 @@ int main() {
 				break;
 			}
 		}
-		
+
 	}
 
 	cout << ans;
