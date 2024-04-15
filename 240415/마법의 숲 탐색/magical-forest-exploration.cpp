@@ -110,7 +110,7 @@ int main() {
 
 			//2번 시계방향 0:상 1:우 2:하 3:좌
 			//좌 먼저
-			nx = cx + dx[3];
+			/*nx = cx + dx[3];
 			ny = cy + dy[3];
 
 			for (int dir = 0; dir < 4; dir++) {
@@ -128,7 +128,7 @@ int main() {
 						break;
 					}
 				}
-			}
+			}*/
 
 			if (!stage3) {
 				nx = cx + dx[3] + dx[2];
@@ -161,7 +161,7 @@ int main() {
 
 			//3번 시계방향 0:상 1:우 2:하 3:좌
 
-			nx = cx + dx[1];
+			/*nx = cx + dx[1];
 			ny = cy + dy[1];
 
 			for (int dir = 0; dir < 4; dir++) {
@@ -179,7 +179,7 @@ int main() {
 						break;
 					}
 				}
-			}
+			}*/
 
 			if (!sstop) {
 				nx = cx + dx[1] + dx[2];
