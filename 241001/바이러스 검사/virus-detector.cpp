@@ -6,7 +6,7 @@ int N; //식당의 수
 int dining[1000000]; //식당 배열
 int leader;
 int follower;
-int ans;
+long long ans;
 
 int main()
 {
